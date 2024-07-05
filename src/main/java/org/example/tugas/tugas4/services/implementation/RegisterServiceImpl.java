@@ -16,6 +16,10 @@ public class RegisterServiceImpl implements RegisterService {
         System.out.println("==================================================");
         System.out.println("Masukan Nama Anda: ");
         String Nama = scan.nextLine();
+        if (Nama.isEmpty()){
+            System.out.println("Registrasi gagal, silahkan ulang");
+            return;
+        }
         register.setNama(Nama);
         System.out.println("Masukan No hp Anda: ");
         String tempNoHp = scan.nextLine();
@@ -27,12 +31,24 @@ public class RegisterServiceImpl implements RegisterService {
         register.setNomorHp(noHp);
         System.out.println("Masukan tempat tanggal lahir Anda: ");
         String ttl = scan.nextLine();
+        if (ttl.isEmpty()){
+            System.out.println("Registrasi gagal, silahkan ulang");
+            return;
+        }
         register.setTtl(ttl);
         System.out.println("Masukan Email anda: ");
         String email = scan.nextLine();
+        if (email.isEmpty()){
+            System.out.println("Registrasi gagal, silahkan ulang");
+            return;
+        }
         register.setEmail(email);
         System.out.println("Masukan Password Anda: ");
         String password = scan.nextLine();
+        if (password.isEmpty()){
+            System.out.println("Registrasi gagal, silahkan ulang");
+            return;
+        }
         register.setPassword(password);
         System.out.println("Nama Anda: " + register.getNama());
         System.out.println("Nomor HP Anda: " + register.getNomorHp());
