@@ -1,0 +1,4 @@
+Kendaraan
+- nomor registrasi
+- merek
+- model
