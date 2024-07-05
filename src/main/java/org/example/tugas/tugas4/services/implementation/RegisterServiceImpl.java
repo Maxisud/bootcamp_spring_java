@@ -18,8 +18,12 @@ public class RegisterServiceImpl implements RegisterService {
         String Nama = scan.nextLine();
         register.setNama(Nama);
         System.out.println("Masukan No hp Anda: ");
-        Long noHp = scan.nextLong();
-        scan.nextLine(); // saya masukin ini karena kalau pakai nextLong, jadi keskip kalau tanpa next line dulu (ada \n nya), liat di stackoverflow
+        String tempNoHp = scan.nextLine();
+        if (tempNoHp.isEmpty()) {
+            System.out.println("Registrasi gagal, silahkan ulang");
+            return;
+        }
+        Long noHp = Long.parseLong(tempNoHp);
         register.setNomorHp(noHp);
         System.out.println("Masukan tempat tanggal lahir Anda: ");
         String ttl = scan.nextLine();
